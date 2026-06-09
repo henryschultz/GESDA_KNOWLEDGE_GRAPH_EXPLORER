@@ -16,8 +16,6 @@ from typing import Sequence
 import httpx
 import numpy as np
 
-from src.models import Chunk
-
 logger = logging.getLogger(__name__)
 
 
@@ -78,11 +76,6 @@ class EmbeddingModel:
     def encode_query(self, query: str) -> np.ndarray:
         """Encode a single query string → (D,) vector."""
         return self.encode_texts([query])[0]
-
-    def encode_chunks(self, chunks: Sequence[Chunk]) -> np.ndarray:
-        """Encode chunk texts → (N, D) array, aligned with the input list."""
-        texts = [c.text for c in chunks]
-        return self.encode_texts(texts)
 
 
 class APIEmbeddingModel:
@@ -169,11 +162,6 @@ class APIEmbeddingModel:
     def encode_query(self, query: str) -> np.ndarray:
         """Encode a single query string → (D,) vector."""
         return self.encode_texts([query])[0]
-
-    def encode_chunks(self, chunks: Sequence[Chunk]) -> np.ndarray:
-        """Encode chunk texts → (N, D) array."""
-        texts = [c.text for c in chunks]
-        return self.encode_texts(texts)
 
     def close(self) -> None:
         """Close the HTTP client."""
