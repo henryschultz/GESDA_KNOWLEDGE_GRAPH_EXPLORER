@@ -1,0 +1,19 @@
+# KG Explorer — HuggingFace Space configuration
+
+embeddings:
+  backend: "local"
+  model_name: "BAAI/bge-m3"
+  dimension: 1024
+  batch_size: 32
+
+qdrant:
+  mode: "remote"
+  url: null         # set via QDRANT_URL Space secret
+  host: "localhost" # unused when url is set
+  port: 6333
+  api_key: null     # set via QDRANT_API_KEY Space secret
+  collection_name: "kg_nodes_bge_m3"
+  distance: "cosine"
+
+logging:
+  level: "INFO"
