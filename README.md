@@ -1,14 +1,14 @@
 ---
-title: Streamlit Template Space
+title: Gesda Knowledge Graph Demo
 emoji: 🚀
 colorFrom: red
 colorTo: red
 sdk: docker
 app_port: 8501
 tags:
-  - streamlit
+- streamlit
 pinned: false
-short_description: Streamlit template space
+short_description: Demo of the Graph querying
 ---
 
 # Welcome to Streamlit!
