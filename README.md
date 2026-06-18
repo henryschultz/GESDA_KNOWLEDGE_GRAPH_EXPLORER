@@ -177,3 +177,7 @@ HF rebuilds automatically. First build installs `torch` + `FlagEmbedding` and do
 ### Qdrant Cloud note
 
 Qdrant Cloud's server mode enforces payload indexes for filtered search (unlike local/embedded mode). If you re-create or re-migrate the `kg_nodes_bge_m3` collection, make sure keyword indexes exist on `node_type` and `attribute_name` — see `scripts/migrate_qdrant_to_cloud.py --index-only` in the main repo.
+
+## License
+
+The GESDA Science & Diplomacy Radar reports (2021, 2023, 2026 editions) are the intellectual property of [GESDA](https://gesda.global). All code in this repository is released under the [MIT License](LICENSE).
